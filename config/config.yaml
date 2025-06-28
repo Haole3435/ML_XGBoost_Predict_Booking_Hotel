@@ -1,0 +1,28 @@
+data_ingestion:                # Phần cấu hình cho bước lấy dữ liệu
+  bucket_name : "my_bucket9789"            # Tên bucket trên cloud (ví dụ: Google Cloud Storage) chứa dữ liệu gốc
+  bucket_file_name : "Hotel_Reservations.csv"  # Tên file dữ liệu trong bucket
+  train_ratio : 0.8                        # Tỷ lệ chia dữ liệu train/test (80% train, 20% test)
+
+data_processing:               # Phần cấu hình cho bước xử lý dữ liệu
+  categorical_columns:         # Danh sách các cột dạng phân loại (categorical)
+    - type_of_meal_plan
+    - required_car_parking_space
+    - room_type_reserved
+    - market_segment_type
+    - repeated_guest
+    - booking_status
+  numerical_columns:           # Danh sách các cột dạng số (numerical)
+    - no_of_adults
+    - no_of_children
+    - no_of_weekend_nights
+    - no_of_week_nights
+    - lead_time
+    - arrival_year
+    - arrival_month
+    - arrival_date
+    - no_of_previous_cancellations
+    - no_of_previous_bookings_not_canceled
+    - avg_price_per_room
+    - no_of_special_requests
+  skewness_threshold : 5       # Ngưỡng skewness (độ lệch) để xử lý các cột số bị lệch phân phối
+  no_of_features : 10          # Số lượng đặc trưng (features) sẽ được chọn để sử dụng cho mô hình
