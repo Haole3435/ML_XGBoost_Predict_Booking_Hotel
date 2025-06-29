@@ -90,7 +90,7 @@ Dự án được xây dựng theo một pipeline gồm các bước tuần tự
     ```
 3.  **Cài đặt các thư viện cần thiết:**
     ```bash
-    pip install -r requirements.txt
+    pip install -e .
     ```
 
 ### Bước 2: Cấu hình dự án
